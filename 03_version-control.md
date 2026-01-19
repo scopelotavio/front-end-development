@@ -607,9 +607,114 @@ This may seem bit complicated at the beginning, but **merge conflicts are a norm
 
 
 
-[doc301]: /front-end-development/03_Version-Control/public/github-git-cheat-sheet%20(1).pdf
+
+
+
+## Forking
+In previous lessons, you have touched on workflows such as branching and how they can be used to simplify a process for a team. Forking is another type of workflow. The key difference between ```branching``` and ```forking``` is that the workflow for forking creates a new repository entirely. Branching cuts a new branch from the same repository each time and each member of the team works on the single repository.
+
+Let's take a simple example of how ```forking works```. In the diagram below the 'coolgame' repo has been forked by Joe. The entire contents and the history of the repository are now stored in Joe's account on GitHub. Joe is now free to make edits and changes to the repository at his own will. You, the owner of the 'coolgame' repository can continue to work as normal and not know about Joe's edits or changes.
+
+![Demonstration of Fork][img308]
+
+Joe created a new branch on his repository and added a new cool feature that he felt was needed. In order for Joe to get his feature back into the original repository, he will need to create a PR as normal but instead of comparing it with the main branch, it needs to be compared with the original repository. Essentially, the two repositories are compared against each other. The owner of the original repository can then review the PR and choose to accept or decline the new feature.
+
+### Software images 
+This reading contains software screengrab images. While the software's appearance often evolves with continual updates, the core functionalities and techniques covered in this reading should remain applicable. 
+
+### Forking
+Let us take a look at how you can fork an existing repository that is available on GitHub. 
+
+**Tip:** For this example, we used a repository we can access on GitHub. You can treat this reading an informational overview of the forking process but if you wish, you can use a repository on GitHub, to help you follow the steps listed. The names used in commands are for illustration only.
+
+**Step 1:** If you have access to your own repository on GitHub, you can access this now to follow along.
+
+**Step 2:** Click on the Fork button on the top right of the page.
+
+![Click on Fork][img309]
+
+**Step 3:** It will then prompt you to fork the repository to your desired account. Choose the account you wish to fork to.
+
+![Create a new fork][img310]
+
+**Step 4:** Github will then clone the repository into your chosen GitHub account.
+
+In a couple of steps, you have successfully forked a repository into your own GitHub account. The full repository is cloned and allows us to work directly in that repository as if it was our own.
+
+On the landing page of the GitHub repository, it will show directly under the repository name that it was forked from Meta-Front-End-Developer-PC/forking-lesson.
+
+![Forked repository visisble from GitHub landing page][img311]
+
+Other subtle differences in the GitHub UI on a forked branch are in the top information bar above the files.
+
+It now shows that the branch is up to date with forking-lesson:main. It also adds a Fetch upstream drop-down to allow you to pull and merge the latest changes from the original repository.
+
+![GitHub shows that the branch is up to date][img312]
+
+### Example
+Let's run through a typical flow of creating a new branch and adding some new content.
+
+**Step 1:** Clone the repository.
+
+**Step 2:** Create a new branch.
+
+```git checkout -b test/forking-example```
+
+**Step 4:** Create a new file and commit it to the repository.
+
+```touch text.txt```
+```git add .``` 
+```git commit -m 'chore: testing'``` 
+
+**Step 5:** Push the branch to your remote repository:
+
+```git push -u origin test/forking-example```
+
+**Step 6:** Go to Github and click the Compare & pull request button. If it's not available, click on the branch dropdown menu and select the branch named test/forking-example:
+
+![Test/forking example][img313]
+
+After clicking the Compare & pull request button it will now redirect to the original repository in order to create the PR.
+
+![Click on the Compare and pull request button][img314]
+
+Each repository will have its own guidelines for submitting PRs and usually provide a how-to contribute guide. As you can see, in order to get the changes from our forked repository, you need to compare it against the original. This gives a lot of control to the repository owners of the original and they get to decide what makes the cut to be merged in.
+
+In this lesson, you covered the basics of forking a repository, adding some changes, and then creating a PR to merge these changes into the original repository. 
+
+
+## Additional Resources
+GitHub: Pricing
+
+GitHub is free to use,  but it also offers different pricing models to suit the needs of different-sized teams and organizations.  Check out the link below:
+
+https://github.com/pricing
+
+Git: An Origin Story
+
+https://www.linuxjournal.com/content/git-origin-story
+
+Git Cheatsheet
+
+https://education.github.com/git-cheat-sheet-education.pdf
+
+Git patterns and anti-patterns for successful developers  
+
+https://youtu.be/t_4lLR6F_yk
+
+Tech Talk: Linus Torvalds on git  
+
+https://www.youtube.com/watch?v=4XpnKHJAok8
+
+Vim Cheatsheet
+
+https://devhints.io/vim
+
 
 # PUBLIC
+
+[doc301]: /front-end-development/03_Version-Control/public/github-git-cheat-sheet%20(1).pdf
+
 
 [img301]: /front-end-development/public/images/301_Using-Bash-on-Mac-terminal_1.png
 [img302]: /front-end-development/public/images/302_Using-Bash-on-Mac-terminal_2.png
@@ -618,3 +723,10 @@ This may seem bit complicated at the beginning, but **merge conflicts are a norm
 [img305]: /front-end-development/public/images/305_Using-Bash-on-Mac-terminal_5.png
 [img306]: /front-end-development/public/images/306_Using-Bash-on-Mac-terminal_6.png
 [img307]: /front-end-development/public/images/307_Push_Pull_img.png
+[img308]: /front-end-development/public/images/308_Fork.svg
+[img309]: /front-end-development/public/images/309_fork_button.png
+[img310]: /front-end-development/public/images/310_fork_prompt.png
+[img311]: /front-end-development/public/images/311_forked_repo.png
+[img312]: /front-end-development/public/images/312_forked_ui_changes.png
+[img313]: /front-end-development/public/images/313_fork_create_pr.png
+[img313]: /front-end-development/public/images/314_forked_pull_request.png
