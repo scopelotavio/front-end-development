@@ -1442,6 +1442,401 @@ https://www.amazon.com/CSS-Definitive-Guide-Visual-Presentation/dp/1449393195/
 
 
 
+## Bootstrap
+Bootstrap is often described as a way to "build fast, responsive sites" and it is a "feature-packed, powerful, and extensible frontend toolkit". 
+
+Some people refer to it as a "front-end" framework, and some are trying to be more specific by referring to it as a "CSS framework" or a “CSS library”. 
+
+So, what is Bootstrap?
+
+Simply put, Bootstrap is a library of CSS and JavaScript code that you can combine to quickly build visually appealing websites.
+
+Modern web development is all about **components**. Small pieces of reusable code that allow you to build websites quickly. Bootstrap comes with multiple components for very fast construction of multiple components, or parts of components. 
+
+Another important aspect of modern development is **responsive grids** which allow web pages to adapt their layout and content depending on the device in which they are viewed. Bootstrap comes with a pre-made set of CSS rules for building a responsive grid.
+
+Bootstrap is very popular amongst developers as it saves development time and provides a way for developers to build visually appealing prototypes and websites.
+
+Bootstrap saves significant time because all the CSS code that styles its grid and pre-built components is already written. Instead of needing a high level of expertise in various CSS concepts, you can simply use the existing Bootstrap CSS classes to create visually appealing websites. This is indispensable when you need to quickly iterate on website layouts.
+
+Once you know how Bootstrap works, you’ll have enough knowledge to tweak its styling and a whole new world of development opens up to you.
+
+Since Bootstrap is so popular, understanding how to work with it is a prerequisite in many web development companies. Additionally, you can be safe in knowing that both you and your team members have a common design system and you don't have to spend time deciding how to build one. You are free to jump from team to team, from project to project, even from one company to another, and you don't need to re-learn "their way of doing things".
+
+All of these points make investing time to learn Bootstrap a great way to boost your web development skills. In this lesson, you’ll be introduced to the core concepts of Bootstrap and learn how to build web pages using it.
+
+
+
+
+
+## Using Bootstrap documentation
+Bootstrap comes with detailed documentation on setting up and using the features available in its library. The documentation is clear and has many code examples to help you get started.
+
+In this reading, you'll explore the frequently used documentation sections.
+
+The documentation for Bootstrap is currently available at the following link.
+
+https://getbootstrap.com/docs
+
+### Navigating the documentation
+The sidebar on the webpage allows you to navigate through the different sections of the documentation. There is also a search box if you need to search for a specific piece of information.
+
+![Using the sidebar in the Bootstrap documentation][img010301]
+
+
+
+### Layout
+The layout section of the documentation describes how to use the grid system of Bootstrap. This covers what you've learned so far and includes more advanced usage such as offsets, column alignment, auto-layout and variable width columns.
+
+![Layout section of the Bootstrap documentation][img010302]
+
+
+
+### Content
+The content section of the documentation describes Bootstrap's default text styling and how to use responsive images and tables. You've learned the basics of these earlier on and this section goes into further detail.
+
+![The content section of the Bootstrap documentation][img010303]
+
+
+
+### Forms
+The forms section of the documentation describes how to build forms using Bootstrap's styles. The library has many CSS rules to improve your form's user interface and experience. Below are some features you'll frequently use as a developer:
+
+![The Forms section of the Bootstrap documentation][img010304]
+
+#### Form Styling
+Bootstrap includes CSS rules to improve the visual style of input elements.
+
+For example:
+
+![Bootstrap Form Styling][img010305]
+
+This table outlines the different HTML form elements and which Bootstrap CSS class should be used for them.
+
+| Form Element | CSS class |
+| -- | -- |
+| input | form-control |
+| input type="checkbox" | form-check-input | 
+| input type="radio" | form-check-input |
+| input type="range" | form-range |
+| select | form-select | 
+
+Using these CSS classes will style the elements appropriately for different input types, sizings and states. More information is available on the [Forms documentation page](https://getbootstrap.com/docs/5.0/forms/overview/).
+
+
+
+### Switches
+If you've used an app on your mobile device, you're probably familiar with the switch input type.
+
+![Bootstrap Doc Switches][img010306]
+
+Bootstrap includes CSS rules to style checkbox input elements as switches. 
+
+To do this:
+1. Add the input to a div element. 
+2. On the div element, apply the form-check and form-switch CSS classes. 
+3. On the input element, add the form-check-input CSS class.
+
+```HTML
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox">
+</div>
+```
+
+More information is available in the [Switches section of the documentation](https://getbootstrap.com/docs/5.0/forms/checks-radios/#switches).
+
+
+
+
+### Input Groups
+Input groups are useful for providing additional content to the input field. For example, if you wanted to request the user to input a US dollar amount, you can use an input group to show the dollar symbol and cents amount.
+
+![Bootstrap Input Groups][img010307]
+
+To do this:
+1. Add the input to a div element. 
+2. Apply the input-group CSS classes on the div element. 
+3. Add a ```span``` element before and/or after the input element and apply the ```input-group-text``` CSS class to it. The text content is then added inside the ```span``` element.
+
+```HTML
+<div class="input-group">
+  <span class="input-group-text">$</span>
+  <input type="text" class="form-control">
+  <span class="input-group-text">.00</span>
+</div>
+```
+
+More information is available on the [Input Groups documentation page](https://getbootstrap.com/docs/5.0/forms/input-group/).
+
+
+
+
+### Floating Labels
+Floating labels help provide form information to the user as part of the input itself. These are different from regular form placeholders. The information stays visible if the user is interacting with the element or if the element has content.
+
+![Bootstrap floating label][img010308]
+
+![Bootstrap floating label][img010309]
+
+To do this, add the ```input``` to a ```div``` element. On the ```div``` element, apply the ```form-floating``` CSS classes.
+
+```HTML
+<div class="form-floating">
+  <input type="email" class="form-control" id="addressInput" placeholder="Address">
+  <label for="addressInput">Address</label>
+</div>
+```
+
+More information is available on the [Floating Labels documentation page](https://getbootstrap.com/docs/5.0/forms/floating-labels/)
+
+
+
+
+### Components
+As you have learned, Bootstrap comes with many pre-made UI elements and styles to help speed up your development.
+
+Some of these components require Javascript to work, while others only require CSS classes applied to HTML elements. The Components section of the documentation explains these requirements on each component page and provides many code examples.
+
+![The components section of the Bootstrap documentation][img010310]
+
+
+
+### Conclusion
+Now that you are familiar with how to use the Bootstrap documentation, maybe try some new components and styles on a webpage that you've previously built.
+
+
+
+
+
+## Other CSS frameworks and libraries
+As a developer, you'll use many CSS libraries and frameworks throughout your career. As you move on to different projects and as technologies advance, knowing what solutions are available is critical. While Bootstrap is one of the most popular CSS libraries, many others are available, each with different purposes, designs and technical approaches. This reading will introduce you to other popular CSS libraries and frameworks.
+
+Foundation
+Official Website
+
+Foundation is a framework for building user interfaces similar to Bootstrap. It is used by many large companies such as Pixar, Polar and Sonos. One prominent feature of Foundation is that it can be used to style content for sending via email.
+
+CSS frameworks: Foundation website
+Pure.css
+Official Website
+
+Pure.css is another library for building user interfaces. While it doesn't have as many features as Bootstrap, it is designed to be minimal in file size. Smaller file sizes improve loading times for web pages as there is less data to transfer from the web server. If your next project is focused on minimal loading time, this library is worth considering.
+
+CSS frameworks: Pure website 
+Tailwind CSS
+Official Website
+
+Tailwind CSS is a CSS framework that uses a utility-based approach for its CSS rules. This means that the framework provides many CSS classes with a single purpose. For example, the CSS class pt-6 sets the padding-top CSS property to 6 pixels. This means that you can be precise in applying styling to your HTML without writing CSS. The advantage to this is that it is more flexible for customizing your webpage's design using the framework. However, the disadvantage is that if multiple developers are working on a project, it could lead to inconsistent design if the team is not strict on its design rules.
+
+CSS frameworks: Tailwindcss website
+UIKit
+Official Website
+
+UIKit is a lightweight CSS framework featuring a small set of responsive components. Its simple design allows developers to easily customize the style rules and visuals.
+
+CSS frameworks: UIKit website
+MVP.css
+Official Website
+
+MVP.css is a small CSS library that automatically styles HTML elements without needing to apply CSS classes to them. The library aims to allow a developer to quickly prototype a user interface without worrying about the final design, while still being visually appealing. MVP comes from the technical term Minimal Viable Product, a product with sufficient features to demo to customers or other business stakeholders.
+
+CSS frameworks: MVP.css website
+Conclusion
+If you're curious to learn more about these frameworks, their websites feature set up guides, tutorials and documentation to get started. It is a good exercise to compare and contrast different libraries and frameworks to understand different workflows available to you as a developer.
+
+
+
+
+
+
+## Additional Resources
+Bootstrap Official Website
+
+https://getbootstrap.com/
+
+Bootstrap 5 Foundations by Daniel Foreman  
+
+https://www.amazon.com/Bootstrap-Foundations-Mr-Daniel-Foreman/dp/B0948GRS8W/
+
+Responsive Web Design with HTML5 and CSS  by Ben Frain  
+
+https://www.amazon.com/Responsive-Web-Design-HTML5-CSS/dp/1839211563/
+
+Bootstrap Themes  
+
+https://themes.getbootstrap.com/
+
+
+
+
+
+## Case Study: Why did Facebook engineers create React?
+There are a lot of JavaScript Model-View-Controller (MVC) frameworks out there. Why did we build React and why would you want to use it?
+
+React isn’t an MVC framework.
+React is a library for building composable user interfaces. It encourages the creation of reusable UI components which present data that changes over time.
+
+React doesn’t use templates.
+Traditionally, web application UIs are built using templates or HTML directives. These templates dictate the full set of abstractions that you are allowed to use to build your UI.
+
+React approaches building user interfaces differently by breaking them into components. This means React uses a real, full-featured programming language to render views, which we see as an advantage over templates for a few reasons:
+
+JavaScript is a flexible, powerful programming language with the ability to build abstractions. This is incredibly important in large applications.
+
+By unifying your markup with its corresponding view logic, React can actually make views easier to extend and maintain.
+
+By baking an understanding of markup and content into JavaScript, there’s no manual string concatenation and therefore less surface area for XSS vulnerabilities.
+
+We’ve also created 
+JSX
+, an optional syntax extension, in case you prefer the readability of HTML to raw JavaScript.
+
+React updates are dead simple.
+React really shines when your data changes over time.
+
+In a traditional JavaScript application, you need to look at what data changed and imperatively make changes to the DOM to keep it up-to-date. Even AngularJS, which provides a declarative interface via directives and data binding 
+requires a linking function to manually update DOM nodes
+.
+
+React takes a different approach.
+
+When your component is first initialized, the render method is called, generating a lightweight representation of your view. From that representation, a string of markup is produced and injected into the document. When your data changes, the render method is called again. In order to perform updates as efficiently as possible, we diff the return value from the previous call to render with the new one and generate a minimal set of changes to be applied to the DOM.
+
+The data returned from render is neither a string nor a DOM node — it’s a lightweight description of what the DOM should look like.
+
+We call this process reconciliation. Check out 
+this jsFiddle
+ to see an example of reconciliation in action.
+
+Because this re-render is so fast (around 1ms for TodoMVC), the developer doesn’t need to explicitly specify data bindings. We’ve found this approach makes it easier to build apps.
+
+HTML is just the beginning.
+Because React has its own lightweight representation of the document, we can do some pretty cool things with it:
+
+Facebook has dynamic charts that render to <canvas> instead of HTML.
+
+Instagram is a “single page” web app built entirely with React and Backbone.Router. Designers regularly contribute React code with JSX.
+
+We’ve built internal prototypes that run React apps in a web worker and use React to drive native iOS views via an Objective-C bridge.
+
+You can run React on the server for SEO, performance, code sharing and overall flexibility.
+
+Events behave in a consistent, standards-compliant way in all browsers (including IE8) and automatically use event delegation.
+
+Head on over to 
+https://reactjs.org
+ to check out what we have built.
+
+
+
+
+
+ ## The Virtual DOM
+React builds a representation of the browser Document Object Model or DOM in memory called the virtual DOM. As components are updated, React checks to see if the component’s HTML code in the virtual DOM matches the browser DOM. If a change is required, the browser DOM is updated. If nothing has changed, then no update is performed.
+
+As you know, this is called the reconciliation process and can be broken down into the following steps:
+
+Step 1: The virtual DOM is updated.
+
+Step 2: The virtual DOM is compared to the previous version of the virtual DOM and checks which elements have changed.
+
+Step 3: The changed elements are updated in the browser DOM.
+
+Step 4: The displayed webpage updates to match the browser DOM.
+
+As updating the browser DOM can be a slow operation, this process helps to reduce the number of updates to the browser DOM by only updating when it is necessary.
+
+But even with this process, if a lot of elements are updated by an event, pushing the update to the browser DOM can still be expensive and cause slow performance in the web application.
+
+The React team invested many years of research into solving this problem. The outcome of that research is what’s known as the React Fiber Architecture.
+
+The Fiber Architecture allows React to incrementally render the web page. What this means is that instead of immediately updating the browser DOM with all virtual DOM changes, React can spread the update over time. But what does "over time" mean?
+
+Imagine a really long web page in the web browser. If the user scrolls to the bottom, the top of the web page is no longer visible. The user then clicks a button on the bottom of the web page that updates some text on the top of the web page.
+
+But the top of the page isn’t visible. Therefore, why update it immediately?
+
+Perhaps there is text currently displayed on the bottom of the page that also updates when the button is clicked. Wouldn’t that be a higher priority to update than the non-visible text?
+
+This is the principle of the React Fiber Architecture. React can optimize when and where updates occur to the browser DOM to significantly improve application performance and responsiveness to user input. Think of it as a priority system. The highest priority changes, the elements visible to the user, are updated first. While lower priority changes, the elements not currently displayed, are updated later.
+
+While you’re unlikely to interact with the virtual DOM and Fiber Architecture yourself, it’s good to know what’s going on if issues occur during the development of your web application.
+
+There are many tools available to help you investigate how React is processing your webpage. The official React Developer Tools web browser plugin developed by Meta will be one of the key tools in your developer toolbox. So, if you do have to look deeper into the code, you’ll have the right toolbox available to help you. These tools will be explored later on. 
+
+
+
+
+
+
+## Alternatives to React
+React is a library and not a framework. This means you'll often use other JavaScript libraries with it to build your application. In this reading, you will be briefly introduced to some JavaScript libraries commonly used with React.
+
+Lodash
+Official Website
+
+As a developer, there's a lot of logic you'll commonly write across applications. For example, you might need to sort a list of items or round a number such as 3.14 to 3. Lodash provides common logic such as these as a utility library to save you time as a developer.
+
+Other Javascript libraries: Lodash
+Luxon
+Official Website
+
+You'll be working with dates and times often as a developer. Think of viewing a list of orders and when they were placed, or displaying a calendar schedule for an event. Dates and times are everywhere.
+
+Luxon helps you work with dates and times by providing functions to manipulate and display them. For example, think of how dates are formatted in different countries. In the United States the format is Month Day Year but in Europe it is Day Month Year. This is one area where Luxon can help you display the date in the user's local format.
+
+Other Javascript libraries: Luxon
+Redux
+Official Website
+
+When building a web application, you'll need to keep track of its state. Think of when you shop online. The web application tracks items currently in your shopping cart. When you remove an item from the cart, the application needs to update what displays on the screen. This is where Redux comes in. It helps you manage your application state and even has advanced features such as undo and redo.
+
+Other Javascript libraries: Redux
+Axios
+Official Website
+
+As a developer you'll be communicating with APIs over HTTP frequently. The Axios library helps to simplify sending HTTP requests and processing the response. It also provides advanced features allowing you to cancel requests and to change data received from the web server before your application uses the data.
+
+Other Javascript libraries: Axios 
+Jest
+Official Website
+
+It is good practice to write automated tests for your code as a professional developer. The jest library helps you to do this and works with many libraries and frameworks. It also provides reporting utilities such as providing information on how much of your code is tested by your automated tests.
+
+Other Javascript libraries: Jest 
+Conclusion
+If you're curious to learn more about these libraries, their websites feature setup guides, tutorials and documentation to get started. These libraries will be covered later on.
+
+
+
+
+
+
+## Additional Resources
+Learn more
+Here is a list of resources that may be helpful as you continue your learning journey.
+
+React Official Website
+https://reactjs.org/
+
+Choosing between Traditional Web Apps and Single Page Apps (Microsoft)
+
+https://docs.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/choose-between-traditional-web-and-single-page-apps
+
+React Source Code (Github)
+
+https://github.com/facebook/react
+
+Introduction to React.js  
+
+The original video recorded at Facebook in 2013.
+
+https://youtu.be/XxVg_s8xAms
+
+
+
+
+
 
 # MODULE 04
 
@@ -1496,6 +1891,17 @@ https://www.amazon.com/CSS-Definitive-Guide-Visual-Presentation/dp/1449393195/
 [img010218]: /front-end-development/public/images/img010218_text_color_hue2.png
 [img010219]: /front-end-development/public/images/img010219_css_center_div.png
 [img010220]: /front-end-development/public/images/img010220_css_float_right.png
+
+[img010301]: /front-end-development/public/images/img010301_bootstrap_docs_navigation.png
+[img010302]: /front-end-development/public/images/img010302_bootstrap_docs_layout.png
+[img010303]: /front-end-development/public/images/img010303_bootstrap_docs_content.png
+[img010304]: /front-end-development/public/images/img010304_bootstrap_docs_forms.png
+[img010305]: /front-end-development/public/images/img010305_bootstrap_form_control.png
+[img010306]: /front-end-development/public/images/img010306_bootstrap_docs_switches.png
+[img010307]: /front-end-development/public/images/img010307_bootstrap_input_group.png
+[img010308]: /front-end-development/public/images/img010308_bootstrap_docs_floating_label1.png
+[img010309]: /front-end-development/public/images/img010309_bootstrap_docs_floating_label2.png
+[img010310]: /front-end-development/public/images/img010310_bootstrap_docs_components.png
 
 [page101]: /front-end-development/01_Introduction%20to%20Front-End%20Development/examine_the_page/index.html
 
