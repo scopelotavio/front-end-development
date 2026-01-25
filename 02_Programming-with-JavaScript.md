@@ -1030,6 +1030,241 @@ Today, JavaScript is ubiquitous and is running in browsers, on servers, actually
 
 
 
+## Conditional examples
+In this reading, you will learn when to use the ```if else`` statement and when to use the switch statement.
+
+Both ```if else``` and ```switch``` are used to determine the program execution flow based on whether or not some conditions have been met.
+
+This is why they are sometimes referred to as **flow control statements**. In other words, they control the flow of execution of your code, so that some code can be skipped, while other code can be executed.
+
+At the heart of both flow control structures lies the evaluation of one or more conditions.
+
+
+
+### Break statement
+Before we understand the flow control statements, let us take a minute to understand the ```break``` statement. The ```break``` statement is used to exit a loop or stop the execution of a ```switch``` case. Once a break is encountered, the program immediately jumps out of the current block.
+
+```js
+for (let i = 1; i <= 5; i++) {
+    if (i === 3) {
+
+        break; // Stops when i is 3
+    }
+    console.log(i);
+}
+// Output: 1, 2
+```
+
+Without break, the loop or switch would continue running, which could lead to unintended behavior.
+
+Generally, ```if else``` is better suited if there is a **binary** choice in the condition.
+
+For example, in plain English: _if it's sunny, wear sunglasses. Otherwise, don't._
+
+In this case, using an ```if``` statement is an obvious choice.
+
+When there is a smaller number of possible outcomes of truthy checks, it is still possible to use an ```if else``` statement, such as:
+
+```js
+if(light == "green") {
+    console.log("Drive")
+} else if (light == "orange") {
+    console.log("Get ready")
+} else if (light == "red") {
+    console.log("Dont' drive")
+} else {
+    //this block will run if no condition matches
+    console.log("The light is not green, orange, or red");
+}
+```
+
+However, if there are **a lot of possible outcomes**, it is best practice to use a ```switch``` statement because it is less wordy. 
+
+
+
+### Switch statements
+Being easier to read, it is easier to follow the logic and thus **reduce the cognitive load of reading multiple conditions**.
+
+Take a note that ```switch``` uses strict equality ```===``` for comparisons which means, it first compares the type and then the values of the operands.
+
+For example:
+
+```js
+console.log(1 === "1"); // false (different types)
+console.log(null === null); // true (same type and value)
+console.log(1 == "1"); // true (type coercion)
+```
+
+Nevertheless, this is not a rule set in stone. It is simply a stylistic choice.
+
+To reinforce this point, here's an example of the earlier ```if else``` conditional statement, using the ```switch``` syntax: 
+
+```js
+//converting the previous if-else example with switch-case
+switch(light) {
+   case 'green':
+       console.log("Drive");
+       break;
+   case 'orange':
+       console.log("Get ready");
+       break;
+   case 'red':
+       console.log("Don't drive");
+       break;
+   default:
+       //this block will run if no condition matches
+       console.log('The light is not green, orange, or red');
+}
+```
+
+
+
+### Fallthrough behavior:
+It's important to note that in JavaScript, ```switch``` statements have **fallthrough behavior**, meaning that if a **break** is not included after a ```case```, the code will continue to execute the next case, regardless of whether it matches. For example:
+
+```js
+switch(light) {
+   case 'green':
+       console.log("Drive");
+   case 'orange': // No break here, so this will also run
+       console.log("Get ready");
+       break;
+   case 'red':
+       console.log("Don't drive");
+       break;
+   default:
+       console.log('The light is not green, orange, or red');
+}
+```
+
+In this case, if light is "green", both "green" and "orange" cases will run. To avoid this, always include a break unless intentional fallthrough is desired.
+
+
+
+### Logical operators
+You can also use logical operators like ```&&``` (AND) and ```||``` (OR) to combine multiple conditions in an ```if else``` statement. For example:
+
+```js
+if (weather === "sunny" && temperature > 20) {
+    console.log("Go for a picnic");
+} else if (weather === "rainy" || temperature < 10) {
+    console.log("Stay indoors");
+}
+```
+
+
+
+### Switch
+Switch works well with discrete, exact matches (like strings or numbers) but is less flexible than ```if else``` for evaluating complex conditions or ranges. For example this kind of condition cannot be expressed in a ```switch```:
+
+```js
+if (age > 18 && age < 60) {
+    console.log("Eligible for the program");
+}
+```
+
+
+
+### Conclusion
+Choosing between ```if-else``` and ```switch``` is primarily a matter of readability, not performance, for most use cases, especially for a small number of conditions.
+
+
+
+
+
+
+## Exercise: Practice conditional statements
+
+
+
+### Introduction
+In this exercise, you will practice working with ```if else``` statements. By the end of this exercise, you will be able to write an ```if else``` statement that determines your source of income based on your age. You will also be able to write a ```switch``` statement that determines your evening routine based on the day of the week.
+
+
+
+### Guidelines
+While writing JavaScript code, it's important to check for common syntax errors that can prevent the program from running correctly. Key mistakes to avoid include:
+- **Missing Parentheses:** Always ensure parentheses are correctly placed around conditions in `if else`, and `switch` statements.
+- **Mismatched Curly Braces:** Ensure each opening `{` has a corresponding closing `}` to define code blocks properly.
+- **Extra Semicolons:** Avoid placing semicolons `;` after `if else`, or `else if` conditions as it ends the statement prematurely.
+- **Incorrect Use of Operators:** Double-check logical operators (`&&`, `||`, etc.) and comparison operators (`>`, `<`, `==`) for correct syntax.
+- **Improper Keyword Usage:** Ensure proper use of JavaScript keywords such as `let`, `const`, and `var` for variable declarations.
+
+
+#### Complete the following steps to create: Are You Old Enough? 
+1. Declare a variable `age` using the var keyword and set it to the number `10`.
+2. Add an `if` statement that checks if the value of the age variable is greater than or equal to the number `65`. Inside the if block, console.log the sentence: `"You get your income from your pension"`. (We will be using console.log throughout the code to display output in the console, helping to show the results of conditions and track the program's behavior during execution.)
+3. Add an `else if`,  where you'll check if the value of the age is less than `65` and greater than or equal to `18`. Inside this "else if" block, type "console.log" and then `"Each month you get a salary"`.
+4. Add another `else if`, and this time check if the value of the age is under `18`. Inside the `else if` block, type `console.log` and then `"You get an allowance"`.
+5. Add an `else` statement to capture any other value. Inside the block, type `console.log` and then `"The value of the age variable is not numerical"`.
+
+Try adjusting the age and executing the program to see how it will affect the output.
+
+**Note:** The code in the Are You Old Enough? example does not check if 'age' is a valid number.  To prevent errors during runtime in real-world applications, it's important to verify that an input is of the expected type (for instance a number). Error checking is covered in another lesson.
+
+
+#### Code the days of the week program as a switch statement
+1. On the next line, define a new variable, name it `day`, and set its value to `"Sunday"`.
+2. Start coding a `switch` statement, passing the `day` variable as the expression to evaluate.
+3. Inside the `switch`, add cases for every day of the week, starting with 'Monday', and ending with 'Sunday'. Make sure to use string values for days. Inside each case, for now, just add a console.log('Do something'), and add a break; on the line below.
+4. At the very bottom of the `switch` statement, add the default case and add a `console.log('There is no such day')`.
+5. Finally, update the console.log calls for each case, based on whatever activity you have on each of the days.
+
+**Note:** In the days of the week code example the 'else' block handles unexpected cases. However, it only applies if no conditions match.  It assumes a valid 'age' input. Proper validation of input types, like ensuring 'age' is a number, is explored in other lessons.
+
+
+#### Tips
+- If you need to make sure that multiple conditions are true in an if statement, you can do so using the && operator
+- In JavaScript, the correct syntax of the "greater than or equal to" operator is: >=.
+- Don't forget to add a break at the very end of each case in a switch statement.
+
+**Note:** You can find solutions in a separate reading (following this one)
+
+```js
+var age = 10;
+
+if (age >= 65) {
+    console.log("You get your income from your pension")
+} else if (age >= 18 && age <65) {
+    console.log("Each month you get a salary")
+} else if (age <18) {
+    console.log("You get an allowance")
+} else {
+    console.log("The value of the age variable is not numerical")
+}
+
+var day = "Sunday";
+
+switch (day){
+    case "Monday":
+        console.log("Do something")
+        break
+    case "Tuesday":
+        console.log("Do something")
+        break
+    case "Wednesday":
+        console.log("Do something")
+        break
+    case "Thursday":
+        console.log("Do something")
+        break
+    case "Friday":
+        console.log("Do something")
+        break
+    case "Saturday":
+        console.log("Do something")
+        break
+    case "Sunday":
+        console.log("Do something")
+        break
+    default:
+        console.log("There is no such day")
+}
+```
+
+
+
+
 
 # Module 02 - The Building of a Program
 

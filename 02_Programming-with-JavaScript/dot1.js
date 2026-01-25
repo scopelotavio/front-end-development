@@ -35,8 +35,25 @@
 // console.log(now + three + d);
 
 
-// Task 6
-var counter = 0;
-counter += 5;
-counter += 3;
-console.log(counter);
+// // Task 6
+// var counter = 0;
+// counter += 5;
+// counter += 3;
+// console.log(counter);
+
+
+var light = "orange"
+switch(light) {
+   case 'green':
+       console.log("Drive");
+       break;
+   case 'orange':
+       console.log("Get ready");
+       break;
+   case 'red':
+       console.log("Don't drive");
+       break;
+   default:
+       //this block will run if no condition matches
+       console.log('The light is not green, orange, or red');
+}
