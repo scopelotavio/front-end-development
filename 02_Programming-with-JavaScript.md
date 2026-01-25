@@ -639,39 +639,45 @@ Going back to the example of checking if either ```currentTime < 9``` or ```curr
 
 
 #### The logical NOT operator: !
-In JavaScript, the symbol for the logical NOT operator is the exclamation mark: !.
+In JavaScript, the symbol for the logical NOT operator is the exclamation mark: ```!```.
 
-You can think of the ! operator as a switch, which flips the evaluated boolean value from true to false and from false to true.
+You can think of the ```!``` operator as a switch, which flips the evaluated boolean value from ```true``` to false and from false to true.
 
-For example, if I assign the boolean value of true to the petHungry variable: 
+For example, if I assign the boolean value of ```true``` to the petHungry variable: 
 
-var petHungry = true;
+```var petHungry = true;```
 
-...then I can console log the fact that the pet is no longer hungry by using the ! operator to flip the boolean value stored inside of the petHungry variable, like so:
+...then I can console log the fact that the pet is no longer hungry by using the ```!``` operator to flip the boolean value stored inside of the ```petHungry``` variable, like so:
 
+```js
 console.log('Feeding the pet');
 console.log("Pet is hungry: ", !petHungry);
 console.log(petHungry);
+```
 
 This is the output of the above code:   
 
-1234
-
+```js
 Feeding the pet
 Pet is hungry: false
 true
-In the provided code, console.log("Pet is hungry: ", !petHungry); will show false for the negated value, but the actual value of petHungry remains true unless reassigned.
+```
 
-Notice, however, that the code on last line of the example above still outputs true - that's due to the fact that I didn't reassign the value of the petHungry variable.
+In the provided code, ```console.log("Pet is hungry: ", !petHungry);``` will show ```false``` for the negated value, but the actual value of petHungry remains true unless reassigned.
 
-Here's how I could permanently change the value stored in the petHungry variable from true to false: 
+Notice, however, that the code on last line of the example above still outputs ```true``` - that's due to the fact that I didn't reassign the value of the ```petHungry``` variable.
 
-2
+Here's how I could permanently change the value stored in the ```petHungry``` variable from ```true``` to ```false```: 
+
+```js
 var petHungry = true;
 petHungry = !petHungry;
-In this example, I first assign the value of true to the new variable of petHungry. Then, I reassign the opposite value (!true, or 'not true') to the petHungry variable.
+```
 
-The modulus operator: %
+In this example, I first assign the value of ```true``` to the new variable of ```petHungry```. Then, I reassign the opposite value (```!true```, or 'not true') to the ```petHungry``` variable.
+
+
+#### The modulus operator: %
 The modulus operator is another mathematical operator in JavaScript. It returns the remainder of division.
 
 To demonstrate how it works, imagine that a small restaurant has a total of 5 tables, and each table can seat 4 guests. The restaurant suddenly receives 22 guests.
@@ -680,66 +686,79 @@ How many guests will not be able to sit down in the restaurant?
 
 You can use the modulus operator to solve this.
 
-1
+```js
 console.log(22 % 5); // 2
-The output is 2, because when I divide 22 by 5, I get a 4, and the remainder is 2. So there are 2 people who couldn't get a place in this restaurant.
+```
 
-The equality operator, ==
+The output is ```2```, because when I divide 22 by 5, I get a 4, and the remainder is 2. So there are 2 people who couldn't get a place in this restaurant.
+
+
+#### The equality operator, ==
 The equality operator checks if two values are equal.
 
-For example, this comparison returns true: 5 == 5. Indeed, it is true that 5 is equal to 5.
+For example, this comparison returns ```true```: ```5 == 5```. Indeed, it is ```true``` that 5 is equal to 5.
 
-Here's an example of the equality operator returning false:  5 == 6. Indeed, it is true that 5 is not equal to 6.
+Here's an example of the equality operator returning ```false```:  ```5 == 6```. Indeed, it is ```true``` that 5 is not equal to 6.
 
-Additionally, even if one of the compared values is of the number type, and the other is of the string type, the returned value is still true: 5 == "5". 
+Additionally, even if one of the compared values is of the number type, and the other is of the string type, the returned value is still ```true```: ```5 == "5"```. 
 
 This means that the equality operator compares only the values, but not the types.
 
-The strict equality operator, ===
+
+#### The strict equality operator, ===
 The strict equality operator compares for both the values and the data types.
 
-With the strict equality operator, comparing 5 === 5 still returns true. The values on each side of the strict equality operator have the same value and the same type. However, comparing 5 === "5" now returns false, because the values are equal, but the data type is different.
+With the strict equality operator, comparing ```5 === 5``` still returns ```true```. The values on each side of the strict equality operator have the same value and the same type. However, comparing ```5 === "5"``` now returns ```false```, because the values are equal, but the data type is different.
 
-The inequality operator, !=
+
+#### The inequality operator, !=
 The inequality operator checks if two values are not the same, but it does not check against the difference in types.
 
-For example, 5 != "5" returns false, because it's false to claim that the number 5 is not equal to number 5, even though this other number is of the string data type.
+For example, ```5 != "5"``` returns ```false```, because it's false to claim that the number 5 is not equal to number 5, even though this other number is of the string data type.
 
-The strict inequality operator !==
-For the strict inequality operator to return false, the compared values have to have the same value and the same data type. 
 
-For example,  5 !== 5 returns false because it is false to say that the number 5 is not of the same value and data type as another number 5.
+#### The strict inequality operator !==
+For the strict inequality operator to return ```false```, the compared values have to have the same value and the same data type. 
+
+For example,  ```5 !== 5``` returns ```true``` because it is false to say that the number 5 is not of the same value and data type as another number 5.
 
 However, comparing the number 5 and the string 5, using the strict inequality operator, returns true.
 
-1
+```js
 console.log(5 !== "5")
+```
 
-2. Using the + operators on strings and numbers
-Combining two strings using the + operator
-The + operator, when used with number data type, adds those values together.
 
-However, the + operator is also used to join string data type together.
+
+### 2. Using the + operators on strings and numbers
+
+#### Combining two strings using the + operator
+The ```+``` operator, when used with number data type, adds those values together.
+
+However, the ```+``` operator is also used to join string data type together.
 
 For example:
-
-12
+```js
 "inter" + "net" // "internet"
 "note" + "book" // "notebook"
-If the + operator is used to join strings, then it is referred to as the concatenation operator, and you'll say that it's used to concatenate strings.
+```
 
-When used with numbers, the + operator is the addition operator, and when used with strings, the + operator is the concatenation operator.
+If the ```+``` operator is used to join **strings**, then it is referred to as the concatenation operator, and you'll say that it's used to concatenate strings.
 
-Combining strings and numbers using the + operator
-But what happens when one combines a string and a number using the + operator?
+When used with **numbers**, the ```+``` operator is the addition operator, and when used with strings, the + operator is the concatenation operator.
+
+
+#### Combining strings and numbers using the + operator
+But what happens when one combines a string and a number using the ```+``` operator?
 
 Here's an example:
 
-123
+```js
 365 + " days" // "365 days"
 12 + " months" // "12 months"
+```
 
-Here, JavaScript tries to help by converting the numbers to strings, and then concatenating the number and the string together, ending up with a string value.
+Here, JavaScript tries to help by converting the numbers to strings, and then **concatenating the number and the string together**, ending up with **a string value**.
 
 The process of this "under-the-hood" conversion of values in JavaScript is referred to as "coercion". JavaScript coerces a number value to a string value - so that it can run the + operator on disparate data types.
 
@@ -747,13 +766,16 @@ The process of coercion can sometimes be a bit unexpected.
 
 Consider the following example:
 
-1
+```js
 1 + "2"
-What will be the result of 1 + "2"?
+```
 
-Note that the value of 1 is of the number data type, and the value of "2" is of the string data type.  JavaScript will coerce the number 1 to a string of "1", and then concatenate it with the string of "2".  The result is a string of "12".
+What will be the result of ```1 + "2"```?
 
-The addition assignment operator, +=
+Note that the value of ```1``` is of the number data type, and the value of ```"2"``` is of the string data type.  JavaScript will coerce the number 1 to a string of "1", and then concatenate it with the string of "2".  The result is a string of ```"12"```.
+
+
+#### The addition assignment operator, +=
 The addition assignment operator is used when one wants to accumulate the values stored in a variable.
 
 Here's an example: You are counting the number of overtime hours worked in a week.
@@ -762,28 +784,33 @@ You don't have to specify the type of work, you just want to count total hours.
 
 You might code a program to track it, like this:
 
-123456
+```js
 var mon = 1;
 var tue = 2;
 var wed = 1;
 var thu = 2;
 var fri = 3;
 console.log(mon + tue + wed + thu + fri); // 9
+```
+
 You can simplify the above code by using the addition assignment operator, as follows:
 
-123456
+```js
 var overtime = 1;
 overtime += 2;
 overtime += 1;
 overtime += 2;
 overtime += 3;
 console.log(overtime); // 9
+```
+
 Using the addition assignment operator reduces the lines of your code.
 
-The concatenation assignment operator, +=
+
+#### The concatenation assignment operator, +=
 This operator's syntax is exactly the same as the addition assignment operator. The difference is in the data type used:
 
-1234567
+```js
 var longString = "";
 longString += "Once";
 longString += " upon";
@@ -791,32 +818,213 @@ longString += " a";
 longString += " time";
 longString += "...";
 console.log(longString); // "Once upon a time..."
-Operator precedence and associativity
+```
+
+
+#### Operator precedence and associativity
 Operator precedence is a set of rules that determines which operator should be evaluated first.
 
 Consider the following example:
 
-1
+```js
 1 * 2 + 3
-The result of the above code is 5, because the multiplication operator has precedence over the addition operator.
+```
+
+The result of the above code is ```5```, because the multiplication operator has precedence over the addition operator.
 
 Operator associativity determines how the precedence works when the code uses operators with the same precedence.
 
 There are two kinds: 
-
-left-to-right associativity
-
-right-to-left associativity
+- left-to-right associativity
+- right-to-left associativity
 
 For example, the assignment operator is right-to-left associative, while the greater than operator is left-to-right associative:
 
-12
+```js
 var num = 10; // the value on the right is assigned to the variable name on the left
 5 > 4 > 3; // the 5 > 4 is evaluated first (to `true`), then true > 3 is evaluated to `false`, because the `true` value is coerced to `1`
-Conclusion
+```
+
+
+
+### Conclusion
 In this reading, we explored the fundamental and advanced aspects of JavaScript operators, including their types, precedence, and associativity. A deeper understanding of operator precedence clarified how JavaScript determines the order of evaluation, while operator associativity explained the behavior of operators with the same precedence level. Through practical examples, we demonstrated the importance of knowing how different operators behave, especially when combining numbers, strings, and boolean values.
 
 Mastering JavaScript operators enables developers to write concise, efficient, and effective code. With this foundation, you are better equipped to navigate complex logical and mathematical scenarios in your programs, making your JavaScript skills more robust and versatile.
+
+
+
+
+
+## Exercise: Advanced use of operators
+
+
+### Task 1: Using the logical && operator
+You are coding an RPG game, where each character has certain skill levels based on the value saved in their score.
+1. Create a variable named ```score``` and set it to  8
+2. Use ```console.log()``` that includes the string ```"Mid-level skills:"``` and compares the score variable to above ```0``` and below ```10``` using the ```&&``` operator
+
+The expected output in the console should be: ```"Mid-level skills: true"```.
+
+```js
+var score = 8;
+console.log("Mid-level skills: " + (score > 0 && score <10) )
+```
+
+**Note:** If the score is set to a value between 1 and 9 (inclusive), the condition evaluates to ```true```. Otherwise, it would evaluate to ```false```.
+
+
+
+### Task 2: Using the logical || operator
+Imagine you are coding a video game. Currently, you’re about to code some snippets related to the game over condition.
+
+You need to code a new variable named ```timeRemaining``` and set it to ```0```. You also need to code a new variable named ```energy``` and set it to ```10```.
+
+Next, you should write a piece of code that could be used to determine if the game is over, based on whether either the value of the ```timeRemaining``` variable is ```0``` or the value of the ```energy``` variable is ```0```.
+
+Complete the task using the following steps:
+1. Declare the variable timeRemaining, and assign the value of 0 to it.
+2. Declare the variable energy, and assign the value of 10 to it.
+3. Console log the following parameters: "Game over: ", and timeRemaining == 0 || energy == 0
+
+Note that the expected output in the console should be: ```"Game over: true"```.
+
+```js
+var timeRemaining = 0;
+var energy = 10;
+console.log("Game over: " + (timeRemaining == 0 || energy == 0))
+```
+
+Try changing the ```timeRemaining``` variable to anything above 0 and then see how it affects the result.
+
+**Note:** Logical operators, such as ```&&``` (AND) and ```||``` (OR), allow you to combine multiple conditions to create more complex comparisons.
+
+
+
+### Task 3: Using the modulus operator, %, to test if a given number is odd
+You need to code a small program that takes a number and determines if it's an even number (like 2, 4, 6, 8, 10).
+
+To achieve this task, you need to declare six variables, as follows:
+1. The first variable, named ```num1```,  should be assigned a number value of ```2```.
+2. The second variable, named ```num2```, should be assigned a number value of ```5```.
+3. The third variable, named ```test1```, should be assigned the calculation of ```num1 % 2```. **Note:** executing this code will return a number. **Note:*** The modulus operator % returns the remainder when one number is divided by another. If a number is even, dividing it by 2 will leave no remainder (0).
+4. The fourth variable, named ```test2```, should be assigned the calculation of ```num2 % 2```. Note: executing this code will also return a number.
+5. The fifth variable, named ```result1```, should be assigned the result of checking if the number stored in the ```test1``` variable is  equal to ```0```, in other words: ```test1 == 0```.
+6. The sixth variable, named ```result2```, should be assigned the result of comparing if the number stored in the ```test2``` variable is equal to ```0```, in other words, ```test2 == 0```.
+
+Run console log two times after you've set the variables:
+1. The first console log should have the following code between parentheses: ```"Is", num1, "an even number?", result1```
+2. The second console log should have the following code between parentheses: ```"Is", num2, "an even number?", result2```
+
+**Note:** The output to the console should be as follows:
+
+```js
+Is 2 an even number? true
+Is 5 an even number? false
+```
+
+```js
+var num1 = 2;
+var num2 = 5;
+var test1 = num1 % 2;
+var test2 = num2 % 2;
+var result1 = test1 == 0;
+var result2 = test2 == 0;
+console.log("Is ", num1, " an even number? ", result1)
+console.log("Is ", num2, " an even number? ", result2)
+```
+
+Try it yourself with different values to explore the modulus operator.
+
+
+
+### Task 4: Add numbers using the + operator
+Console log the result of adding two numbers, ```5``` and ```10```, using the ```+``` operator.
+
+**Note:** This task should be completed on a single line of code. The output in the console should be 15.
+
+```js
+console.log(5+10)
+```
+
+
+
+### Task 5: Concatenate numbers and strings using the + operator
+Code three variables:
+1. The first variable should be a string with the following value: ```"Now in "```. Name the variable now.
+2. The second variable should be a number with the value: ```3```. Name the variable ```three```.
+3. The third variable should a string with the following value: ```"D!"```. Name the variable ```d```.
+4. Console log the following code: now + three + d.
+
+**Note:** The expected output should be: ```"Now in 3D!"```.
+
+```js
+var now = "Now in ";
+var three = 3;
+var d = "D!";
+console.log(now + three +d)
+```
+
+
+
+### Task 6: Use the += operator to accumulate values in a variable
+Code a new variable and name it ```counter```, assigning it to the value of ```0```.
+
+On the next line, use the ```+=``` operator to increase the value of counter by ```5```.
+
+On the next line, use the ```+=``` operator to increase the value of counter by ```3```.
+
+On the fourth line, console log the value of the ```counter``` variable.
+
+**Note:** The output value should be ```8```.
+
+```js
+var counter = 0;
+counter += 5;
+counter += 3;
+console.log(counter);
+```
+
+
+
+
+
+## JavaScript improvements
+In this reading, you will learn about the history of JavaScript and the importance of ECMA (European Computer Manufacturers Association) and ECMAScript.  
+
+JavaScript is a programming language that had humble beginnings.
+
+It was built in only 10 days in 1995 by a single person, Brendan Eich, who was tasked with building a simple scripting language to be used in version 2 of the Netscape browser. It was initially called LiveScript, but since the Java language was so popular at the time, the name was changed to JavaScript - although Java and JavaScript are in no way related.
+
+For the first few years, after it was built, JavaScript was a simple scripting language to add mouseover effects and other interactivity. Those effects were being added to webpages using the ```<script> HTML element```.
+
+Inside each of the script elements, there could be some JavaScript code. Due to the rule that HTML, CSS, and JavaScript must be backward compatible, even the most advanced code written in JavaScript today ends up being written between those script tags.
+
+Over the years, JavaScript grew ever more powerful, and in recent times, it's continually touted as among the top three commonly used languages.
+
+In 1996 Netscape made a deal with the organization known as ECMA (European Computer Manufacturers Association) to draft the specification of the JavaScript language, and in 1997 the first edition of the ECMAScript specification was published.
+
+ECMA publishes this specification as the ECMA-262 standard.
+
+You can think of a standard as an agreed-upon way of how things should work. Thus, ECMA-262 is a standard that specifies how the JavaScript language should work.
+
+There have been 12 ECMA-262 updates - the first one was in 1997.
+
+JavaScript as a language is not a completely separate, stand-alone entity. It only exists as an implementation. This implementation is known as a JavaScript engine.
+
+Traditionally, the only environment in which it was possible to run a JavaScript engine, was the browser. More specifically, a JavaScript engine was just another building block of the browser. It was there to help a browser accomplish its users' goal of utilizing the internet for work, research, and play.
+
+So, when developers write JavaScript code, they are using it to interact with a JavaScript engine. Put differently, developers write JavaScript code so that they can "talk to" a JavaScript engine.
+
+Additionally, the JavaScript engine itself comes with different ways to interact with various other parts of the browser. These are known as Browser APIs.
+
+Thus, the code that you write in the JavaScript programming language allows you to: 1. Interact with the JavaScript engine inside of the browser 2. Interact with other browser functionality that exists outside of the JavaScript engine, but is still inside the browser.
+
+Although traditionally it was possible to interact with the JavaScript engine only inside of the browser, this all changed in 2009, when Node.js was built by Ryan Dahl.
+
+He came up with a way to use a JavaScript engine as a stand-alone entity. Suddenly, it was possible to use JavaScript outside of the browser, as a separate program on the command line, or as a server-side environment.
+
+Today, JavaScript is ubiquitous and is running in browsers, on servers, actually, on any device that can run a JavaScript engine.
 
 
 
